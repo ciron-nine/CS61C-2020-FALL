@@ -1,0 +1,9 @@
+1.find
+2.top
+3.kill
+4.diff
+5.mv
+6.chmod
+7.pwd
+8.ping
+9.ls
