@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     printf("%d ", vector_get(v, 1));
     printf("%d\n", vector_get(v, 2));
 
-    printf("Doing a bunch of vector_set()s\n");
+    printf("Doing a bunch of vector_set():\n");
     vector_set(v, 0, 98);
     vector_set(v, 11, 15);
     vector_set(v, 15, -23);
