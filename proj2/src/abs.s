@@ -10,10 +10,10 @@
 # =================================================================
 abs:
     # Prologue
-
     # return 0
-    mv a0, zero
-
+    bge a0, zero, done
+    sub a0, zero, a0
+done:
     # Epilogue
 
     ret
