@@ -33,7 +33,7 @@ loop_start:
 loop_continue:
     addi s1, s1, 4
     addi s0, s0, 4
-    ble s1, s2, loop_start
+    blt s1, s2, loop_start
 loop_end:
     # Epilogue
     lw s3, 0(sp)

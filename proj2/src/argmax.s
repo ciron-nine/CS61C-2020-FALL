@@ -24,25 +24,31 @@ argmax:
     sw s2, 12(sp)
     # Prologue
     mv s0, a0
-    lw s1, 0(s0)
+    mv s1, zero
     mv s3, zero
+    mv s2, zero
 loop_start:
-    lw s2 0(s0)
-    bge s1, s2, loop_continue
-    mv s1, s2
+    li t1, 4
+    mul t2, s1, t1
+    add t2, t2, s0
+    lw t0, 0(t2)
+    li t3, 4
+    mul t1, s3, t3
+    add t1, t1, s0
+    lw t2, 0(t1)
+    bge t0, t2, loop_continue
+    mv s1, s3
 loop_continue:
-    addi s0, s0, 4
     addi s3, s3, 1
     blt s3, a1, loop_start
 loop_end:
     mv a0, s1
     # Epilogue
-    addi sp, sp, 16
     lw s3, 0(sp)
     lw s0, 4(sp)
     lw s1, 8(sp)
     lw s2, 12(sp)
-
+    addi sp, sp, 16
     ret
 error:
     li a1, 77
