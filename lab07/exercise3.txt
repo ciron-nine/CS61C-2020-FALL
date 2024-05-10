@@ -1,20 +1,20 @@
 --- not autograded ---
 
 Part 1
-    blocksize = 20, n = 100: 
-    blocksize = 20, n = 1000: 
-    blocksize = 20, n = 2000: 
-    blocksize = 20, n = 5000: 
-    blocksize = 20, n = 10000: 
+    blocksize = 20, n = 100:0.014 0.026 
+    blocksize = 20, n = 1000:0.615 0.476 
+    blocksize = 20, n = 2000:2.719 3.141 
+    blocksize = 20, n = 5000:20.436 26.251
+    blocksize = 20, n = 10000:97.421 91.321 
 
-    Checkoff Question 1:
-    Checkoff Question 2:
+    Checkoff Question 1:enough big
+    Checkoff Question 2:beacause cache have some cost, and the for check is have some cost too.
 
 Part 2
-    blocksize = 50, n = 10000:
-    blocksize = 100, n = 10000:
-    blocksize = 500, n = 10000:
-    blocksize = 1000, n = 10000:
-    blocksize = 5000, n = 10000:
+    blocksize = 50, n = 10000:90.535 70.332
+    blocksize = 100, n = 10000:99.435 77.214
+    blocksize = 500, n = 10000:98.423 94.433
+    blocksize = 1000, n = 10000:98.444 107.432 
+    blocksize = 5000, n = 10000:97.334 123.973
 
-    Checkoff Question 3:
+    Checkoff Question 3:beacause as the cache bigger, cache fast's capcity is lessen.

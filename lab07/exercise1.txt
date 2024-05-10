@@ -1,24 +1,25 @@
 Scenario 1
-    1.
-    2.
-    3.
+    1.hit count / access
+    2.0.0
+    3.set direct mapped to fully or set block size
 
 Scenario 2
-    1.
-    2.
-    3.
+    1.32
+    2.MHHH
+    3.1.0
 
 Scenario 3
-    1.
-    2.
-    3.
-    4.
-    5.
+    1.0.5 0.0 0.25
+    2.32 16
+    3.16
+    4.repcount
+    5.=,+,=,+
 
 --- lines below are ignored by the AG ---
 
-Checkoff Question 1:
-Checkoff Question 2:
-Checkoff Question 3:
-Checkoff Question 4:
-Checkoff Question 5:
+Checkoff Question 1:have to replace, so it is miss
+Checkoff Question 2:Block Size and Number of Blocks
+Checkoff Question 3:cache did have the data, and the data have to write
+Checkoff Question 4:only the first occassion have the condition that misses.
+Checkoff Question 5:k + dot mod some 
+	 	  6:because when the second, it can hit always,but L1 just like the first time.

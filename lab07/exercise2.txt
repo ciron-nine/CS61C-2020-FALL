@@ -1,8 +1,8 @@
-1.
-2.
+1.jki,kji
+2.kij,ikj
 
 --- lines below are ignored by the AG ---
 
-Checkoff Question 1:
-Checkoff Question 2:
-Checkoff Question 3:
+Checkoff Question 1:least stride 1 0 1, use the cache fully
+Checkoff Question 2:like 1, just opposite
+Checkoff Question 3:perform , better to use cache
