@@ -1,19 +1,19 @@
 Exercise 1:
-    1.
-    2.
-    3.
+    1.32
+    2.3,7
+    3.Y,N
 
 Exercise 2:
-    1.
+    1.20,40,60,80,a0,c0,e0,20,40,60
 
 Exercise 3:
-    1.
+    1.TLBsize bigger
 
 --- lines below are ignored by the AG ---
 
 Exercise 1 Checkoff Questions:
-    1.
-    2.
+    1.check the translation to table the valid bit is valid, if first, it not, so we use the lru frame to replace physical frame.
+    2.because assume the real memory is bigger than the physical memory.
 
 Exercise 4 Checkoff Question:
-    1.
+    1.page table is bigger than camera's and the camera's tlb is the same size as the another. so bigger.
