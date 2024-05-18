@@ -171,6 +171,7 @@ void fill_matrix(matrix *mat, double val) {
  */
 int add_matrix(matrix *result, matrix *mat1, matrix *mat2) {
     /* TODO: YOUR CODE HERE */
+    if(mat1->cols != mat2->cols || mat1->rows != mat2->rows) return 1;
     for(int i = 0; i < mat1->rows; i ++) {
         for(int j = 0; j < mat1->cols; j ++) {
             result->data[i][j] = mat1->data[i][j] + mat2->data[i][j];
@@ -185,6 +186,7 @@ int add_matrix(matrix *result, matrix *mat1, matrix *mat2) {
  */
 int sub_matrix(matrix *result, matrix *mat1, matrix *mat2) {
     /* TODO: YOUR CODE HERE */
+    if(mat1->cols != mat2->cols || mat1->rows != mat2->rows) return 1;
     for(int i = 0; i < mat1->rows; i ++) {
         for(int j = 0; j < mat1->cols; j ++) {
             result->data[i][j] = mat1->data[i][j] - mat2->data[i][j];
@@ -200,6 +202,21 @@ int sub_matrix(matrix *result, matrix *mat1, matrix *mat2) {
  */
 int mul_matrix(matrix *result, matrix *mat1, matrix *mat2) {
     /* TODO: YOUR CODE HERE */
+    if(mat1->cols != mat2->rows) return 1;
+    for(int i = 0; i < result->rows; i ++) {
+        for(int j = 0; j < result->cols; j ++) {
+            result->data[i][j] = 0;
+        }
+    }
+    for(int i = 0; i < result->rows; i ++) {
+        for(int j = 0; j < result->cols; j ++) {
+            for(int step = 0; step < mat1->cols; step ++) {
+                result->data[i][j] += mat1->data[i][step] * mat2->data[step][j];
+            }
+        }
+    }
+
+    return 0;
 }
 
 /*
@@ -209,7 +226,25 @@ int mul_matrix(matrix *result, matrix *mat1, matrix *mat2) {
  */
 int pow_matrix(matrix *result, matrix *mat, int pow) {
     /* TODO: YOUR CODE HERE */
-    1222
+    if(result->rows != result->cols || mat->cols != mat->rows) return 1;
+    matrix * e = NULL;
+    allocate_matrix(&e, mat->rows, mat->cols);
+    for(int i = 0; i < e->rows; i ++) {
+        for(int j = 0; j < e->cols; j ++) {
+            e->data[i][j] = mat->data[i][j];
+        }
+    }
+    double ** pt = NULL;
+    for(int i = 0; i < pow - 1; i ++) {
+        mul_matrix(result, e, mat);
+        pt = e->data;
+        e->data = result->data;
+        result->data = pt;
+    }
+    result->data = e->data;
+    e->data = pt;
+    deallocate_matrix(e);
+    return 0;
 }
 
 /*
@@ -218,6 +253,12 @@ int pow_matrix(matrix *result, matrix *mat, int pow) {
  */
 int neg_matrix(matrix *result, matrix *mat) {
     /* TODO: YOUR CODE HERE */
+    for(int i = 0; i < mat->rows; i ++) {
+        for(int j = 0; j < mat->cols; j ++) {
+            result->data[i][j] = -1.0 * mat->data[i][j];
+        }
+    }
+    return 0;
 }
 
 /*
@@ -226,5 +267,16 @@ int neg_matrix(matrix *result, matrix *mat) {
  */
 int abs_matrix(matrix *result, matrix *mat) {
     /* TODO: YOUR CODE HERE */
+    for(int i = 0; i < mat->rows; i ++) {
+        for(int j = 0; j < mat->cols; j ++) {
+            if(mat->data[i][j] < 0.0) {
+                result->data[i][j] = -1.0 * mat->data[i][j];
+            }
+            else {
+                result->data[i][j] = mat->data[i][j];
+            }
+        }
+    }
+    return 0;
 }
 
